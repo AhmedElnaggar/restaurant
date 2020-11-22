@@ -1,9 +1,11 @@
 package com.springboot.restaurant.models;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.*;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
+import java.time.LocalDate;
 import java.util.List;
 
 
@@ -18,6 +20,7 @@ public class RestaurantTable {
     @NotNull(message = "please enter number of persons")
     private int numberOfPersons;
 
+    @JsonIgnore
     @OneToMany(mappedBy = "table")
     List<BookingSchedule> bookingSchedules;
 

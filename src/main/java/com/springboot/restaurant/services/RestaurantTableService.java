@@ -21,4 +21,8 @@ public class RestaurantTableService {
          return tab;
     }
 
+    public List<RestaurantTable> gelAllTables(){
+        return tableRepository.findAll();
+    }
+
 }
